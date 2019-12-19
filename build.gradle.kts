@@ -1,26 +1,34 @@
 plugins {
-    application
-    kotlin("jvm") version "1.3.61"
+    kotlin("jvm") version("1.3.61")
 }
 
-application.mainClassName = "MainKt"
+buildscript {
 
-group = "dev.poteto"
-version = "1.0-SNAPSHOT"
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
 
-repositories {
-    mavenCentral()
-    jcenter()
+    dependencies {
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.61")
+        classpath("org.jetbrains.kotlinx:atomicfu-gradle-plugin:0.14.1")
+    }
+
+}
+
+allprojects {
+    group = "dev.poteto"
+    version = "1.0"
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
 }
 
 dependencies {
-    val ktorVersion = "1.2.6"
-
     implementation(kotlin("stdlib-jdk8"))
-    implementation("io.ktor:ktor-server-core:$ktorVersion")
-    implementation("io.ktor:ktor-server-netty:$ktorVersion")
-    implementation("io.ktor:ktor-server-jetty:$ktorVersion")
-    implementation("io.ktor:ktor-gson:$ktorVersion")
+    implementation(project(":kentang-core"))
 }
 
 tasks {
