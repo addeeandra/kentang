@@ -1,6 +1,7 @@
-Kentang is a framework for creating web with fast and structured with minimal effort on top of [Ktor](https://github.com/ktorio/ktor).
+Kentang is a helper class (framework wannabe) for creating web application using Kotlin in fast and clean with minimal effort based on [Ktor](https://github.com/ktorio/ktor).
 
-1. Create a route class by extending `KentangRoute`
+
+### 1. Create a route class by extending `KentangRoute`
 ```kotlin
 import dev.poteto.kentang.KentangRoute
 import io.ktor.application.call
@@ -19,7 +20,8 @@ class UserRoute : KentangRoute() {
 }
 ``` 
 
-2. Create your app class by extending `KentangApplication`
+
+### 2. Create your app class by extending `KentangApplication`
 ```kotlin
 import dev.poteto.kentang.KentangApplication
 import io.ktor.server.engine.ApplicationEngineFactory
@@ -37,7 +39,8 @@ class MyApp : KentangApplication() {
 }
 ```
 
-3. Call your application class within main function
+
+### 3. Call your application class within main function
 ```kotlin
 fun main() {
     MyApp().startEmbeddedServer()
