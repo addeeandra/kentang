@@ -46,3 +46,10 @@ fun main() {
     MyApp().startEmbeddedServer()
 }
 ```
+
+### 4. Access it by typing http://localhost:8002 in your browser
+![Preview](https://i.ibb.co/Wy23GQ0/image.png "Preview")
+
+### TODO
+- A simple worker / job dispatcher
+- A single controller attached to single route
